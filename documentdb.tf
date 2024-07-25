@@ -59,7 +59,7 @@ resource "aws_secretsmanager_secret_version" "document_db_credentials_version" {
     port = aws_docdb_cluster_instance.cluster_instance[0].port
     urlMedicos = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/medicos"
     urlPacientes = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/pacientes"
-    urlPacientes = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/consultas"
+    urlConsultas = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/consultas"
   })
 }
 
