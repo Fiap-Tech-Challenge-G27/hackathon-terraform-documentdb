@@ -36,9 +36,10 @@ resource "random_string" "username" {
 }
 
 resource "random_string" "password" {
-  length           = 15
-  special          = true
-  override_special = "/@\" "
+  length           = 16
+  special          = false
+  upper            = true
+  # override_special = "/@\" "
 }
 
 locals {
