@@ -36,7 +36,7 @@ resource "random_string" "username" {
 }
 
 resource "random_string" "password" {
-  length           = 16
+  length           = 15
   special          = true
   override_special = "/@\" "
 }
