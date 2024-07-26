@@ -57,9 +57,9 @@ resource "aws_secretsmanager_secret_version" "document_db_credentials_version" {
     password = random_string.password.result
     endpoint = aws_docdb_cluster_instance.cluster_instance[0].endpoint
     port = aws_docdb_cluster_instance.cluster_instance[0].port
-    urlMedicos = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/medicos"
-    urlPacientes = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/pacientes"
-    urlConsultas = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/consultas"
+    urlMedicos = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/medicos?retryWrites=false"
+    urlPacientes = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/pacientes?retryWrites=false"
+    urlConsultas = "mongodb://${random_string.username.result}:${local.encoded_password}@${aws_docdb_cluster_instance.cluster_instance[0].endpoint}:${aws_docdb_cluster_instance.cluster_instance[0].port}/consultas?retryWrites=false"
   })
 }
 
